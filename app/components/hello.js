@@ -18,10 +18,10 @@ import HelloRedux from '../containers/Hello';
 //Redux Org 
 
 import { createStore } from 'redux';
-import App from '../ReduxOrg/App';
-import todoApp from '../ReduxOrg/reducers';
+import App from '../fxy/App';
+import todoApp from '../fxy/reducers';
 
-let store = createStore(todoApp);
+let store = createStore(todoApp,[{text:'test',completed:false}],window.devToolsExtension ? window.devToolsExtension() : undefined);
 
 class Hello extends React.Component{
     render(){
