@@ -5,6 +5,8 @@ import Hello from './components/hello';
 import './components/hello.less';
 import {AppContainer} from 'react-hot-loader';
 
+
+
 render(
     <AppContainer>
         <Hello/>
@@ -18,7 +20,7 @@ if (module.hot) {
         const NewHello = require('./components/hello').default;
         render(
             <AppContainer>
-                <NewHello/>
+                <Hello/>
             </AppContainer>,
             document.getElementById('root')
         );
