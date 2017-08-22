@@ -12,15 +12,13 @@ import C from '../components/C';
 
 
 class HelloRedux extends React.Component {
-    constructor(props){
-        super(props);
-    }
     render() {
         return (
             <div>
                 <p>Hello World</p>
                 <hr/>
-                <A userinfo={this.props.userinfo}/>
+                <div>test</div>
+                <A userinfo={this.props.userinfo} />
                 <hr/>
                 <B userinfo={this.props.userinfo}/>
                 <hr/>
@@ -36,7 +34,7 @@ class HelloRedux extends React.Component {
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state){  //reducers 
     return {
         userinfo: state.userinfo
     }

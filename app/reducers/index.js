@@ -4,7 +4,7 @@ import userinfo from './userinfo';
 
 
 const rootReducer = combineReducers({
-    userinfo
+    userinfo  // dispatch
 })
 
 export default rootReducer;
