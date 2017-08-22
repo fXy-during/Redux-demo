@@ -5,21 +5,30 @@ import CounterWrap from './Counter';
 
 import { Provider } from 'react-redux';
 
-import configureStore from '../store/configureStore';
 
 // CounterWrap();
 
 import HelloRedux from '../containers/Hello';
 
 
-const store = configureStore();
+// import configureStore from '../store/configureStore';
+// const store = configureStore();
 
+
+//Redux Org 
+
+import { createStore } from 'redux';
 import App from '../ReduxOrg/App';
+import todoApp from '../ReduxOrg/reducers';
+
+let store = createStore(todoApp);
 
 class Hello extends React.Component{
     render(){
         return(
-            <App/>
+            <Provider store={store}>
+                <App/>
+            </Provider>
         )
     }
 }
