@@ -7,7 +7,6 @@ class A extends React.Component {
     }
     componentDidMount(){
         console.log('A props :',this.props.userinfo);
-        console.log("2");
     }
     render(){
         return(

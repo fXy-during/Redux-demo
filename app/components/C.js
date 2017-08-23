@@ -2,12 +2,9 @@ import React from 'react';
 
 
 class C extends React.Component {
-    constructor(props){
-        super(props);
-    }
-    handerClick(e){
-       const actions = this.props.actions;
-       actions.login({
+    handerClick(){
+        console.log(this.props);
+       this.props.login({
             user: '123',
             city: 'nanjing'
        })

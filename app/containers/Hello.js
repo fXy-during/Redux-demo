@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 
-import * as userinfoActions from '../actions/userinfo'
+import {login,undateCityName } from '../actions/userinfo'
 
 
 import A from '../components/A';
@@ -13,40 +13,42 @@ import C from '../components/C';
 
 class HelloRedux extends React.Component {
     render() {
+    const { dispatch, userinfo } = this.props;
+        console.log(userinfo);
         return (
             <div>
                 <p>Hello World</p>
                 <hr/>
                 <div>test</div>
-                <A userinfo={this.props.userinfo} />
+                <A userinfo={userinfo} />
                 <hr/>
-                <B userinfo={this.props.userinfo}/>
+                <B userinfo={userinfo}/>
                 <hr/>
-                <C actions={this.props.userinfoActions}/>
+                <C login={data=>dispatch(login(data))}/>
             </div>
         )
     }
     componentDidMount(){
-        this.props.userinfoActions.login({
+        const { dispatch, userinfo } = this.props;
+        dispatch(login({
             user: 'abc',
             city: 'beijing'
-        })
+            })
+        )
     }
 }
 
 function mapStateToProps(state){  //reducers 
+    console.log('state:',state);
     return {
         userinfo: state.userinfo
     }
 }
 
-function mapDispatchToProps(dispatch){ //触发数据变化
-    return {
-        userinfoActions: bindActionCreators(userinfoActions, dispatch)
-    }
-}
+// function mapDispatchToProps(dispatch){ //触发数据变化
+//     return {
+//         userinfoActions: bindActionCreators(userinfoActions, dispatch)
+//     }
+// }
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(HelloRedux)
+export default connect(mapStateToProps)(HelloRedux);

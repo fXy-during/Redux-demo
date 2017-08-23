@@ -1,6 +1,7 @@
 import React, { findDOMNode, Component, PropTypes } from 'react';
 
 export default class AddTodo extends Component {
+
   render() {
     return (
       <div>
@@ -15,6 +16,7 @@ export default class AddTodo extends Component {
   handleClick() {
     const node = this.refs.input;
     const text = node.value.trim();
+    if(!text){return}
     this.props.onAddClick(text);
     node.value = '';
   }
@@ -23,3 +25,5 @@ export default class AddTodo extends Component {
 AddTodo.propTypes = {
   onAddClick: PropTypes.func.isRequired
 }
+
+// <input type='text' ref={node =>{input=node}} /> 

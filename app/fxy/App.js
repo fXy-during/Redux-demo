@@ -22,7 +22,6 @@ class App extends Component {
 
                 <Foot filter={visibilityFilter} onFilterChange={filter => dispatch(setVisibilityFilter(filter))}/>
             </div>
-
         )
     }
 }
